@@ -1,0 +1,15 @@
+{
+  "app": {
+    "port": 7125,
+    "savedir": "i",
+    "domain": "YOUR_DOMAIN",
+    "key": "YOUR_PRIVATE_KEY",
+    "allowedExtensions": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "nameLength": 10
+  }
+}
