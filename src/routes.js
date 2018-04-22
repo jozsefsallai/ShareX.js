@@ -2,7 +2,6 @@ const express = require('express')
 const path = require('path')
 const multer = require('multer')
 const uploadController = require('./uploadController')
-const config = require('./config')
 
 const upload = multer({ dest: 'tmp/' })
 

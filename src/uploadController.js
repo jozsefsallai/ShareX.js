@@ -15,7 +15,7 @@ function findFile(filename) {
   let check = true
 
   try {
-    fs.accessSync(filepath, fs.F_OK)
+    fs.accessSync(file, fs.F_OK)
   } catch (err) {
     check = false
   }
@@ -24,11 +24,12 @@ function findFile(filename) {
 }
 
 function generateName() {
-  let name = ""
-  const allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+  let name = ''
+  const allowedChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
-  for (let i = 0; i < config.app.nameLength; i++) 
+  for (let i = 0; i < config.app.nameLength; i++) {
     name += allowedChars.charAt(Math.floor(Math.random() * allowedChars.length))
+  }
   
   return name
 }
@@ -41,7 +42,7 @@ module.exports.upload = function (req, res) {
   const file = req.file
   const ext = file.originalname.split('.').pop()
 
-  if (config.app.key && req.get('key') != config.app.key) {
+  if (config.app.key && req.get('key') !== config.app.key) {
     return res.status(403).json({
       ok: false,
       error: 'FORBIDDEN'
@@ -66,8 +67,9 @@ module.exports.upload = function (req, res) {
 
   let filename = generateName()
 
-  while (findFile(`${filename}.${ext}`)) 
+  while (findFile(`${filename}.${ext}`)) {
     filename = generateName()
+  }
   
   filename += `.${ext}`
 
