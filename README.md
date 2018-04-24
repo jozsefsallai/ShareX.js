@@ -1,5 +1,7 @@
 # ShareX.js
 
+[![Build Status](https://travis-ci.org/jozsefsallai/ShareX.js.svg?branch=master)](https://travis-ci.org/jozsefsallai/ShareX.js)
+
 Using this simple JavaScript app you will be able to upload your ShareX screenshots to your own host. 
 
 You can use this app as a standalone service on your server but you can also copy parts of it to include it in your other projects.
